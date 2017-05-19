@@ -1,0 +1,10 @@
+{
+  "template": "php-apache",
+  "ports": [8000],
+  "name": "Fca example",
+  "description": "Simple fca example for tutorial",
+  "scripts": {
+    "post-create": "cd ~/code/fca-example && composer install && php artisan key:generate && mysql -u root -e 'create database laravel_base' && php artisan migrate --seed && php artisan vendor:publish",
+    "Start Fca Example": "cd ~/code/fca-example/ && php artisan serve --host 0.0.0.0"
+  }
+}
